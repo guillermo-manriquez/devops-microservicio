@@ -53,3 +53,8 @@ def eliminar_tarea(tarea_id: int):
     if tarea_id not in tareas_db:
         raise HTTPException(status_code=404, detail="Tarea no encontrada")
     del tareas_db[tarea_id]
+
+@app.get("/stats")
+def obtener_estadisticas():
+    # Cambia 'base_de_datos' por el nombre real de tu lista/diccionario de tareas
+    return {"total_tareas": len(tareas_db)}
