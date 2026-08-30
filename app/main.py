@@ -15,7 +15,7 @@ def health():
 
 @app.get("/")
 def root():
-    return {"message": "Microservicio de Tareas funcionando"}
+    return {"message": "Microservicio de Tareas funcionando correctamente"}
 
 
 @app.get("/tareas", response_model=list[TareaConId])
