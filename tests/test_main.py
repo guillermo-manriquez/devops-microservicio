@@ -60,3 +60,8 @@ def test_eliminar_tarea():
 
     response = client.get(f"/tareas/{tarea_id}")
     assert response.status_code == 404
+
+def test_obtener_estadisticas():
+    response = client.get("/stats")
+    assert response.status_code == 200
+    assert "total_tareas" in response.json()
