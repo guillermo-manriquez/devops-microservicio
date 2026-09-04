@@ -14,6 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Imprimir mensaje de inicio (Echo)
+        run: echo "Iniciando el pipeline de Integración Continua y validación de código..."
+
       - name: Checkout del código
         uses: actions/checkout@v4
 
@@ -31,3 +34,4 @@ jobs:
       - name: Ejecutar pruebas con pytest
         run: |
           python -m pytest -v
+          echo "Pruebas finalizadas exitosamente. El código es estable."
